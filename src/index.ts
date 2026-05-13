@@ -2192,7 +2192,7 @@ export class BitbucketServer {
 }
 
 // Entry point — only runs when this module is executed directly, not when imported.
-if (process.argv[1] === new URL(import.meta.url).pathname || process.argv[1].endsWith('.bin/bitbucket-server-mcp')) {
+if (process.argv[1] === new URL(import.meta.url).pathname || process.argv[1].endsWith('.bin/bitbucket-server-mcp') || process.argv[1].endsWith('.bin/selfhosted-bitbucket-server-mcp')) {
   const server = new BitbucketServer();
   server.run().catch((error) => {
     logger.error('Server error', error);

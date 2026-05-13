@@ -1,11 +1,12 @@
 {
-  "name": "bitbucket-server-mcp",
+  "name": "selfhosted-bitbucket-server-mcp",
   "version": "1.0.0",
   "description": "MCP Server for Bitbucket Server PR management",
   "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
+    "selfhosted-bitbucket-server-mcp": "./build/index.js",
     "bitbucket-server-mcp": "./build/index.js"
   },
   "scripts": {
