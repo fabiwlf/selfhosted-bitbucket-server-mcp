@@ -2,7 +2,24 @@
 
 MCP (Model Context Protocol) server for Bitbucket Server Pull Request management. This server provides tools and resources to interact with the Bitbucket Server API through the MCP protocol.
 
-Example MCP client configuration:
+Example MCP client configuration (using `bunx`):
+
+```json
+"bitbucket": {
+            "type": "stdio",
+            "command": "bunx",
+            "args": [
+                "git+https://github.com/fabiwlf/selfhosted-bitbucket-server-mcp.git"
+            ],
+            "env": {
+                "BITBUCKET_URL": "https://your-bitbucket-server.example.com",
+                "BITBUCKET_TOKEN": "REDACTED",
+                "BITBUCKET_DEFAULT_PROJECT": "YOUR_PROJECT_KEY"
+            }
+}
+```
+
+Or with `npx` if you prefer Node.js:
 
 ```json
 "bitbucket": {
@@ -19,6 +36,8 @@ Example MCP client configuration:
             }
 }
 ```
+
+> The repository ships pre-built JavaScript in `build/` so neither runtime needs to compile TypeScript at install time. This is what makes `bunx` work out of the box (Bun blocks `prepare`/`postinstall` lifecycle scripts on git installs by default).
 
 ## Requirements
 
