@@ -9,7 +9,7 @@ Example MCP client configuration (using `bunx`):
             "type": "stdio",
             "command": "bunx",
             "args": [
-                "git+https://github.com/fabiwlf/selfhosted-bitbucket-server-mcp.git"
+                "fabiwlf/selfhosted-bitbucket-server-mcp"
             ],
             "env": {
                 "BITBUCKET_URL": "https://your-bitbucket-server.example.com",
@@ -27,7 +27,7 @@ Or with `npx` if you prefer Node.js:
             "command": "npx",
             "args": [
                 "-y",
-                "git+https://github.com/fabiwlf/selfhosted-bitbucket-server-mcp.git"
+                "github:fabiwlf/selfhosted-bitbucket-server-mcp"
             ],
             "env": {
                 "BITBUCKET_URL": "https://your-bitbucket-server.example.com",
@@ -37,7 +37,7 @@ Or with `npx` if you prefer Node.js:
 }
 ```
 
-> The repository ships pre-built JavaScript in `build/` so neither runtime needs to compile TypeScript at install time. This is what makes `bunx` work out of the box (Bun blocks `prepare`/`postinstall` lifecycle scripts on git installs by default).
+> The repository ships pre-built JavaScript in `build/` so neither runtime compiles TypeScript at install time. This is required for `bunx`, which blocks `prepare`/`postinstall` lifecycle scripts on git installs by default. Use the GitHub shorthand (`user/repo` or `github:user/repo`) rather than a raw `git+https://...` URL — bunx can't derive a package name from a raw git URL.
 
 ## Requirements
 
